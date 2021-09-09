@@ -1,4 +1,4 @@
-package com.trekware.shoppinglistx
+package com.trekware.shoppinglistx.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,14 +8,16 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.trekware.shoppinglistx.R
 import com.trekware.shoppinglistx.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var toggle: ActionBarDrawerToggle
-    lateinit var binding: ActivityMainBinding
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
         val drawerLayout : DrawerLayout = findViewById(R.id.drawer_layout)
