@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
 import com.google.android.material.navigation.NavigationView
 import com.trekware.shoppinglistx.R
 import com.trekware.shoppinglistx.databinding.ActivityMainBinding
@@ -18,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        val view = binding.root
+        setContentView(view)
 
         val drawerLayout : DrawerLayout = findViewById(R.id.drawer_layout)
         val navView : NavigationView = findViewById(R.id.nav_view)
@@ -48,18 +50,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToAddItemView() {
         //findNavController(R.id.host_fragment).navigate()
-        //findNavController(R.id.addItemFragment).navigate(directions)
-        TODO("Not yet implemented")
+        //findNavController(R.id.addItemFragment).navigate(direction
+        Toast.makeText(applicationContext, "FAB button cliced", Toast.LENGTH_SHORT).show()
+        binding.fab.hide()
+        findNavController(R.id.nav_host_fragment).navigate(R.id.addItemFragment)
     }
 
     private fun onHomeImprovementNavigation() {
         Toast.makeText(applicationContext, R.string.home_improvement, Toast.LENGTH_SHORT).show()
         supportActionBar?.title = "Home Improvement List"
+        findNavController(R.id.nav_host_fragment).navigate(R.id.listFragment)
+        binding.fab.show()
     }
 
     private fun onGroceryNavigation() {
         Toast.makeText(applicationContext, R.string.groceries, Toast.LENGTH_SHORT).show()
         supportActionBar?.title = "Groceries List"
+        findNavController(R.id.nav_host_fragment).navigate(R.id.listFragment)
+        binding.fab.show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

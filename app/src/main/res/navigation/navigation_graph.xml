@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.trekware.shoppinglistx.ui.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.trekware.shoppinglistx.ui.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <action
+        android:id="@+id/action_global_listFragment"
+        app:destination="@id/listFragment" />
+    <action
+        android:id="@+id/action_global_addItemFragment"
+        app:destination="@id/addItemFragment"
+        app:enterAnim="@animator/fab_hide"
+        app:exitAnim="@animator/fab_show"
+        app:popEnterAnim="@animator/fab_hide"
+        app:popExitAnim="@animator/fab_show" />
+</navigation>
