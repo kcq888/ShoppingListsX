@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "shopping_list_table")
-data class ShoppingList (
+data class ShoppingListItem (
     @PrimaryKey(autoGenerate = true)
     var listId : Long = 0L,
 

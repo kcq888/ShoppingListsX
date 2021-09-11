@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addItemFragment"
-        android:name="com.trekware.shoppinglistx.ui.AddItemFragment"
+        android:name="com.trekware.shoppinglistx.ui.item.AddItemFragment"
         android:label="fragment_add_item"
         tools:layout="@layout/fragment_add_item" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.trekware.shoppinglistx.ui.ListFragment"
+        android:name="com.trekware.shoppinglistx.ui.list.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" />
     <action

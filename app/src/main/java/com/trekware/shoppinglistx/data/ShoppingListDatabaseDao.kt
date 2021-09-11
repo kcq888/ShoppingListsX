@@ -12,17 +12,17 @@ import androidx.room.Update
 @Dao
 interface ShoppingListDatabaseDao {
     @Insert
-    suspend fun insert(shoppingList: ShoppingList)
+    suspend fun insert(shoppingListItem: ShoppingListItem)
 
     @Update
-    suspend fun update(shoppingList: ShoppingList)
+    suspend fun update(shoppingListItem: ShoppingListItem)
 
     @Query("SELECT * FROM shopping_list_table Where listId = :key")
-    suspend fun get(key: Long) : ShoppingList
+    suspend fun get(key: Long) : ShoppingListItem
 
     @Query( "DELETE FROM shopping_list_table")
     suspend fun clear()
 
     @Query("SELECT * FROM shopping_list_table ORDER BY listId DESC")
-    fun getAllLists() :LiveData<List<ShoppingList>>
+    fun getAllItemList() :LiveData<List<ShoppingListItem>>
 }

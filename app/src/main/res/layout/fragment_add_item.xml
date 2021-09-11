@@ -3,13 +3,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AddItemFragment">
+    tools:context=".ui.item.AddItemFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="@string/add_an_item" />
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginStart="20sp"
+                    android:src="@drawable/ic__check_list_paper_icon"
+                    android:contentDescription="@string/list" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60sp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="20sp"
+                    android:text="@string/add_an_item_to_list"
+                    android:textStyle="normal"
+                    android:textSize="25sp">
+                </TextView>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_description"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_item_description"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#757575" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_qty"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_item_quantity"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#757575" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_cost"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_item_cost"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#757575" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginStart="50sp"
+                android:layout_marginEnd="50sp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="20sp"
+                    android:text="@string/cancel" />
+
+                <Button
+                    android:id="@+id/ok_button"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ok" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
