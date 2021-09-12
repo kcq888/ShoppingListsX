@@ -23,6 +23,6 @@ interface ShoppingListDatabaseDao {
     @Query( "DELETE FROM shopping_list_table")
     suspend fun clear()
 
-    @Query("SELECT * FROM shopping_list_table ORDER BY listId DESC")
-    fun getAllItemList() :LiveData<List<ShoppingListItem>>
+    @Query("SELECT * FROM shopping_list_table Where list_category = :category ORDER BY listId DESC")
+    fun getAllItemList(category: Long) :LiveData<List<ShoppingListItem>>
 }

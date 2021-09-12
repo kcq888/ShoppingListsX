@@ -4,7 +4,9 @@
     <string name="shopping_lists">Shopping Lists</string>
     <string name="delete">Delete</string>
     <string name="groceries">Groceries</string>
+    <string name="grocery_list">Grocery List</string>
     <string name="home_improvement">Home Improvement</string>
+    <string name="home_improvement_list">Home Improvement List</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -16,4 +18,5 @@
     <string name="ok">OK</string>
     <string name="add_an_item_to_list">Add an item to list</string>
     <string name="list">list</string>
+    <string name="cost">$</string>
 </resources>

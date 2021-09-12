@@ -7,6 +7,10 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [ShoppingListItem::class], version = 1, exportSchema = false)
 abstract class ShoppingListDatabase : RoomDatabase() {
+
+    /**
+     * Connect the database to dao
+     */
     abstract val shoppingListDatabaseDao : ShoppingListDatabaseDao
 
     companion object {
